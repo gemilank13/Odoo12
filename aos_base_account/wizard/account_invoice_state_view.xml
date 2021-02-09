@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+
+        <record id="account_invoice_confirm_view_nasa" model="ir.ui.view">
+            <field name="name">account.invoice.confirm.form</field>
+            <field name="model">account.invoice.confirm</field>
+            <field name="inherit_id" ref="account.account_invoice_confirm_view"/>
+            <field name="arch" type="xml">
+            	<button name="invoice_confirm" position="after">
+            		<button string="Compute Invoices" name="compute" type="object"/>
+            	</button>
+            </field>
+        </record>
+
+    </data>
+</odoo>

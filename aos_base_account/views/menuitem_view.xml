@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		
+		<menuitem name="Invoicing"
+            id="menu_invoicing"  
+            groups="aos_base_account.group_accounting_receivable,aos_base_account.group_accounting_payable"
+            icon="fa-usd"
+            web_icon="account,static/description/icon.png"
+            sequence="39"/>
+            
+            
+        <menuitem id="account.menu_finance_receivables" name="Sales" parent="aos_base_account.menu_invoicing" 
+        	groups="aos_base_account.group_accounting_receivable"
+        	sequence="2"/>
+        <menuitem id="account.menu_finance_payables" name="Purchases" parent="aos_base_account.menu_invoicing" 
+        	groups="aos_base_account.group_accounting_payable"
+        	sequence="3"/>
+        <menuitem name="Cash &amp; Bank" id="aos_base_account.menu_finance_payment_bank_cash" parent="aos_base_account.menu_invoicing"
+        	sequence="4"/>
+        	
+     		
+		<menuitem name="Reports" id="menu_finance_reporting" parent="aos_base_account.menu_invoicing" sequence="10" 
+        	groups="aos_base_account.group_invoicing_reports"/>
+        <menuitem name="Invoices Analysis" id="menu_action_account_invoice_report_finance_all" action="account.action_account_invoice_report_all" 
+        	groups="aos_base_account.group_accounting_receivable,aos_base_account.group_accounting_payable"
+        	parent="menu_finance_reporting" sequence="2"/>
+        	
+        <menuitem name="Configuration" id="menu_invoicing_configuration" parent="aos_base_account.menu_invoicing" sequence="15" groups="account.group_account_invoice"/>
+		<menuitem id="account.menu_account_supplier" name="Vendors"
+            parent="menu_invoicing_configuration"
+            action="base.action_partner_supplier_form" sequence="100"/>
+		
+		<menuitem id="account.menu_account_customer" name="Customers"
+            parent="menu_invoicing_configuration"
+            action="base.action_partner_customer_form" sequence="100"/>
+
+        <menuitem id="account.menu_product_template_action" name="Stockable Products"
+            parent="menu_invoicing_configuration"
+            action="product.product_template_action" sequence="110"/>            
+            
+		<menuitem name="Accounting"
+            id="account.menu_finance"   
+            groups="account.group_account_user"
+            icon="fa-usd" 
+            web_icon="aos_base_account,static/img/accounting.png"
+            sequence="40"/>
+            
+       <menuitem id="account.menu_board_journal_1" name="Overview" action="account.open_account_journal_dashboard_kanban" parent="account.menu_finance" sequence="1" groups="account.group_account_user"/>
+        
+            
+		<menuitem name="Taxes" id="menu_finance_taxes"
+			parent="account.menu_finance"
+			groups="aos_base_account.group_accounting_taxes" sequence="3" />
+        <!-- <menuitem id="account.menu_board_journal_1" name="Dashboard" action="account.open_account_journal_dashboard_kanban" parent="account.menu_finance" sequence="1" groups="aos_account.group_accounting_dashboard"/> -->
+        <menuitem id="account.menu_finance_entries" name="Adviser" parent="account.menu_finance" sequence="3" groups="aos_base_account.group_accounting_configurations"/>
+        <menuitem id="account.menu_action_tax_adjustment" parent="aos_base_account.menu_finance_taxes" sequence="5" action="account.tax_adjustments_form"/>
+    	<menuitem id="account.menu_finance_reports" name="Reports" parent="account.menu_finance" sequence="5" groups="aos_base_account.group_accounting_reports"/>
+        <menuitem id="account.menu_finance_configuration" name="Configuration" parent="account.menu_finance" sequence="15" groups="aos_base_account.group_accounting_configurations"/>
+
+		<!-- <menuitem id="account.menu_finance_receivables"
+			name="Customers" parent="account.menu_finance" sequence="2" />
+		<menuitem id="account.menu_finance_payables" name="Vendors"
+			parent="account.menu_finance" sequence="3" />
+
+		<menuitem name="Cash &amp; Bank"
+			id="menu_finance_payment_bank_cash" parent="account.menu_finance"
+			sequence="4" /> -->
+
+		<menuitem action="account.action_account_chart_template_form"
+			id="menu_action_account_chart_template_form"
+			parent="account.account_account_menu"
+			groups="account.group_account_user" sequence="3" />
+			
+		<menuitem action="account.action_account_template_form"
+			id="menu_action_account_account_template_form"
+			parent="account.account_account_menu"
+			groups="account.group_account_user" sequence="4" />
+		
+	</data>
+</odoo> 
