@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-	<!--level 2 Laporan KB-->
-	<menuitem id="xls_reports" name="XLS Reports" parent="account.menu_finance_reports" sequence="30"/>
-	<menuitem id="pr_balance_sheet" name="Balance Sheet" parent="xls_reports"
-			  action="pr_balance_sheet_wizard_action" sequence="30"/>
-
-</odoo>
