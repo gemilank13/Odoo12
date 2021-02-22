@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Custom report.-->
+<openerp>
+    <data>
+        <template id="report_journal">
+            <!-- <t t-call="report.external_layout"> -->
+                <div class="page">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img t-if="res_company.logo" t-att-src="'data:image/png;base64,%s' %res_company.logo" style="max-height: 45px;"/>
+                        </div>
+                    </div>
+                    <div class="row zero_min_height">
+                        <div class="col-xs-12">
+
+                            <div style="border-bottom: 1px solid black;"/>
+                            <!-- PT. Arai Indonesia<br/>
+                            Manufacture -->
+                        </div>
+                    </div>
+
+                     <div class="row">
+                        <div class="col-xs-6">
+                            <div t-field="res_company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                        </div>
+                        <!-- <div class="col-xs-5 col-xs-offset-1">
+                            <address t-field="o.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                            <span t-if="o.partner_id.vat">TIN: <span t-field="o.partner_id.vat"/></span>
+                        </div> -->
+                    </div>
+
+                    <h2 style="text-align:center;"> Journal Entries </h2>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <table width="100%" style="font-size:10px">
+                                <tr>
+                                    <td style="width:25%;"> Journal </td>
+                                    <td style="width:25%;"> : <span t-field="o.journal_id.name"/></td>
+                                    <td style="width:25%;"> Reference </td>
+                                    <td style="width:25%;"> : <span t-field="o.ref"/></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width:25%;"> Period </td>
+                                    <td style="width:25%;"> : <span t-field="o.period_id.name"/></td>
+                                    <td style="width:25%;"> Date </td>
+                                    <td style="width:25%;"> : <span t-field="o.date"/> </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br/>
+                    <t t-set="no" t-value="1"/>
+                    <table class="table table-bordered" style="font-size:9px">
+                        <tbody>
+                            <tr >
+                                <th>No</th>
+                                <th>Invoice</th>
+                                <th>Name</th>
+                                <th>Partner</th>
+                                <th>Account</th>
+                                <th>Due Date</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                                <th>Analytic Account</th>
+                                <th>Amount Currency</th>
+                                <th>Currency</th>
+                                <th>Tax Account</th>
+                                <th>Tax/Base Amount</th>
+                                <!-- <th>Status</th>
+                                <th>Reconcile</th>
+                                <th>Partial Reconcile</th> -->
+                            </tr>
+                            <tr t-foreach="o.line_id" t-as="li">
+                                <td><span t-esc="no"/><t t-set="no" t-value="no+1"/></td>
+                                <td><span t-field="li.invoice"/></td>
+                                <td><span t-field="li.name"/></td>
+                                <td><span t-field="li.partner_id.name"/></td>
+                                <td><span t-field="li.account_id.name"/></td>
+                                <td><span t-field="li.date_maturity"/></td>
+                                <td><span t-field="li.debit"/></td>
+                                <td><span t-field="li.credit"/></td>
+                                <td><span t-field="li.analytic_account_id.name"/></td>
+                                <td><span t-field="li.amount_currency"/></td>
+                                <td><span t-field="li.currency_id.name"/></td>
+                                <td><span t-field="li.tax_code_id.name"/></td>
+                                <td><span t-field="li.tax_amount"/></td>
+                                <!-- <td><span t-field="ml.account_id.name"/></td>
+                                <td><span t-field="ml.date_original"/></td>
+                                <td><span t-field="ml.date_due"/></td>
+                                <td><span t-field="ml.amount_original"/></td>
+                                <td><span t-field="ml.amount_unreconciled"/></td>
+                                <td><span t-field="ml.amount"/></td> -->
+                                <!-- <t t-if="line+1 == 3">
+                                    <p style="page-break-after:always;"/>
+                                </t> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="footer">
+                    <table class="table-bordered" style="width:70%;">
+                        <tr>
+                            <td style="width:22%; text-align:center;border:1px solid black;">Dibuat</td>
+                            <td style="width:22%; text-align:center;border:1px solid black;">Diperiksa</td>
+                            <td style="width:22%; text-align:center;border:1px solid black;">Disetujui</td>
+                            <td style="width:22%; text-align:center;border:1px solid black;">Disetujui</td>
+                        </tr>
+                        <tr>
+                            <td style="height:80px;border:1px solid black;"></td>
+                            <td style="height:80px;border:1px solid black;"></td>
+                            <td style="height:80px;border:1px solid black;"></td>
+                            <td style="height:80px;border:1px solid black;"></td>
+                        </tr>
+                    </table>
+                </div>
+            <!-- </t> -->
+        </template>
+
+        <template id="report">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'ab_report_journal.report_journal')"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

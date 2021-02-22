@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+            id="custom_report_purchase_tne"
+            model="account.move"
+            string="Journal Entries"
+            report_type="qweb-pdf"
+            name="ab_report_journal.report"
+            attachment_use="False"
+            file="ab_purchase_report_tne.report"
+        />
+    </data>
+</openerp>
