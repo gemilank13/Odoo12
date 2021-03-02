@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+       id="pemasukan_xlsx"
+       model="djbc.nofas_masuk_v2"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_djbc_xls.pemasukan_xlsx"
+       file="DJBC Pemasukan "
+    />
+
+    <!-- <report
+       id="pengeluaran_xlsx"
+       model="djbc.nofas_keluar_v2"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_djbc_xls.pengeluaran_xlsx"
+       file="DJBC Pengeluaran"
+    /> -->
+</odoo>
