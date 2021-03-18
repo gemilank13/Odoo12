@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="inherit_mrp">
+			<field name="name">inherit.mrp</field>
+			<field name="model">mrp.production</field>
+			<field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+			<field name="arch" type="xml">
+				
+				<field name="origin" position="after">
+					<field name="ab_project"/>
+				</field>
+
+			</field>
+		</record>
+	</data>
+</odoo>
