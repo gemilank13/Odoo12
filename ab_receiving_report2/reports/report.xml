@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+       id="receivement_xlsx"
+       model="stock.picking"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_receiving_report2.receivement_xlsx"
+       file="ab_receiving_report2.receivement_xlsx"
+    />
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="receivement_form" model="ir.ui.view">
+		<field name="name">Receivement Wizard Form</field>
+		<field name="model">receivement.wizard</field>
+		<field name="arch" type="xml">
+			<form string="Receivement Report">
+				<header>
+					Receivement Report
+				</header>
+				<group>
+					<field name="date_start"/>
+					<field name="date_end"/>
+				</group>
+				<footer>
+					<button name='generate_laporan_xls' string='Print Xls' type='object' class='btn-primary'/>
+				</footer>
+			</form>
+		</field>
+	</record>
+
+	<record id="receivementreport_action" model="ir.actions.act_window">
+		<field name="name">Masukan Periode</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">receivement.wizard</field>
+		<field name="view_mode">form</field>
+		<field name="view_id" ref='receivement_form'/>
+		<field name="target">new</field>
+	</record>
+
+	<menuitem 
+		id="receivement_report"
+		name="Receivement Report" 
+		parent="stock.menu_warehouse_report"
+		action="receivementreport_action"
+		sequence="10"/>
+</odoo>

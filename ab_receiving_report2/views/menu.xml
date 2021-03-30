@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<menuitem 
+		id="receivement_report"
+		name="Receivement Report" 
+		parent="stock.menu_warehouse_report"
+		action="receivementreport_action"
+		sequence="10"/>
+
+</odoo>
