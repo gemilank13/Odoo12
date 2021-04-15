@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="pr_balance_sheet_wizard_form" model="ir.ui.view">
+		<field name="name">Balance Sheet Form</field>
+		<field name="model">pr.balance.sheet.wizard</field>
+		<field name="arch" type="xml">
+			<form>
+				<group>
+                                    <group>
+                                        <h3>Current Period</h3>
+					<field name="date_start"/>
+					<field name="date_end"/>
+                                        
+                </group>
+                <group> 
+					<!-- <field name="currency"/>
+					<field name="is_manual_rate"/>
+					<field name="rate" attrs="{'invisible':[('is_manual_rate','==',False)]}"/>
+					<field name="currency_date" attrs="{'invisible':[('is_manual_rate','==',True)]}"/> -->
+
+					<h3>Yeat to Date</h3>
+					<field name="date_start2"/>
+					<field name="date_end2"/>
+					
+                </group>
+                                    
+
+					
+				</group>
+				<footer>
+					<button name='call_pr_balance_sheet' string='Submit' type='object' class='btn-primary'/>
+                                        <button name='generate_laporan_xls' string='Print Xls' type='object' class='btn-primary'/>
+					<button string='Cancel' class='btn-secondary' special='cancel'/>
+				</footer>
+			</form>
+		</field>
+	</record>
+
+	<record id="pr_balance_sheet_wizard_action" model="ir.actions.act_window">
+		<field name="name">Masukan Periode</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">pr.balance.sheet.wizard</field>
+		<field name="view_mode">form</field>
+		<field name="view_id" ref='pr_balance_sheet_wizard_form'/>
+		<field name="target">new</field>
+	</record>
+</odoo>
