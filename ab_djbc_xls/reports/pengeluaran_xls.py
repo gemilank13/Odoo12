@@ -39,7 +39,7 @@ class PengeluaranXlsx(models.AbstractModel):
             sheet.write(row, 4, obj.no_pengeluaran.name, format2)
             sheet.write(row, 5, str(obj.tgl_pengeluaran), format2)
 
-            sheet.write(row, 6, obj.pengirim, format2)
+            sheet.write(row, 6, obj.penerima, format2)
             sheet.write(row, 7, obj.kode_barang, format2)
             sheet.write(row, 8, obj.nama_barang, format2)
             sheet.write(row, 9, obj.jumlah, format2)
