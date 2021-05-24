@@ -21,7 +21,7 @@ class PemasukanXlsx(models.AbstractModel):
         sheet.write(3,5,'Tanggal Penerimaan',format1)
         sheet.write(3,6,'Pengiriman Barang',format1)
         sheet.write(3,7,'Kode Barang',format1)
-        sheet.write(3,8,'Kode Barang',format1)
+        sheet.write(3,8,'Nama Barang',format1)
         sheet.write(3,9,'Jumlah',format1)
         sheet.write(3,10,'Satuan',format1)
         sheet.write(3,11,'Nilai',format1)
