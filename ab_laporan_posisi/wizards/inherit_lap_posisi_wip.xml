@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record model="ir.ui.view" id="inherit_posisiwip">
+		<field name="name">posisiwip.inherit</field>
+		<field name="model">djbc.posisi.wip.wizard</field>
+		<field name="inherit_id" ref="djbc_posisi_wip.posisi_wip_wizard_form"/>
+		<field name="arch" type="xml">
+			<!-- gunakan tag xpath untuk mengacu pada suatu elemen -->
+			<xpath expr="//button[@name='call_djbc_posisi_wip']" position="after">
+				<button name="generate_laporan_xls" type="object" class="oe_highlight" string="Pint Xlsx"/>
+			</xpath>
+
+		</field>
+	</record>
+</odoo>

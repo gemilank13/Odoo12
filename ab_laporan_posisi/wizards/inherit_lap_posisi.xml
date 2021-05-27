@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record model="ir.ui.view" id="inherit_posisi">
+		<field name="name">posisi.inherit</field>
+		<field name="model">djbc.nofas.posisi.wizard</field>
+		<field name="inherit_id" ref="djbc_nofas_posisi.nofas_posisi_wizard_form"/>
+		<field name="arch" type="xml">
+			<!-- gunakan tag xpath untuk mengacu pada suatu elemen -->
+			<xpath expr="//button[@name='call_djbc_nofas_posisi']" position="after">
+				<button name="generate_laporan_xls" type="object" class="oe_highlight" string="Pint Xlsx"/>
+			</xpath>
+
+		</field>
+	</record>
+</odoo>
+<!-- 
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record model="ir.ui.view" id="inherit_posisi">
+		<field name="name">posisi.inherit</field>
+		<field name="model">djbc.nofas.posisi.wizard</field>
+		<field name="inherit_id" ref="djbc_nofas_posisi.nofas_posisi_wizard_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//button[@name='call_djbc_nofas_posisi']" position="after">
+				<button name="generate_laporan_xls" type="object" class="oe_highlight" string="Pint Xlsx"/>
+			</xpath>
+
+		</field>
+	</record>
+</odoo>
+ -->

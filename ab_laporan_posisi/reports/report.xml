@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+       id="posisi_wip_xlsx"
+       model="djbc.posisi.wip"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_laporan_posisi.posisi_wip_xlsx"
+       file="DJBC Laporan Posisi WIP"
+    />
+
+    <report
+       id="posisi_xlsx"
+       model="djbc.nofas_posisi"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_laporan_posisi.posisi_xlsx"
+       file="DJBC Laporan Posisi Barang"
+    />
+</odoo>
