@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="kite_mbb_tree" model="ir.ui.view">
+		<field name="name">Mutasi Bahan Baku Tree</field>
+		<field name="model">djbc.kite_mbb</field>
+		<field name="arch" type="xml">
+			<tree create="0" edit="0">
+				
+				<field name="kode_barang"/>
+				<field name="nama_barang"/>
+				
+				<!-- <field name="satuan"/> -->
+				<field name="saldo_awal"/>
+				<field name="pemasukan"/>
+				<field name="pengeluaran"/>
+				<field name="penyesuaian"/>
+				<field name="stock_opname"/>
+				<field name="saldo_akhir"/>
+				<field name="selisih"/>
+				<field name="keterangan"/>
+				<field name="warehouse"/>
+				
+			</tree>
+		</field>
+	</record> 
+
+
+
+	<record id="kite_mbb_form" model="ir.ui.view">
+		<field name="name">Mutasi Bahan Baku Form</field>
+		<field name="model">djbc.kite_mbb</field>
+		<field name="arch" type="xml">
+			<form create="0" edit="0">
+				<group>
+					<group>
+						<field name="kode_barang"/>
+						<field name="nama_barang"/>
+						
+						<!-- <field name="satuan"/> -->
+						<field name="saldo_awal"/>
+						<field name="pemasukan"/>
+						<field name="pengeluaran"/>
+						<field name="penyesuaian"/>
+						<field name="stock_opname"/>
+						
+					</group>
+					<group>
+						<field name="saldo_akhir"/>
+						<field name="selisih"/>
+						<field name="keterangan"/>
+						<field name="warehouse"/>
+				
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+
+	<record id="kite_mbb_action" model="ir.actions.act_window">
+		<field name="name">Mutasi Bahan Baku</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">djbc.kite_mbb</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+
+</odoo>
