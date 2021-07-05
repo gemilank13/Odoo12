@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="kite_pbb_tree" model="ir.ui.view">
+		<field name="name">Pemasukan Bahan Baku Tree</field>
+		<field name="model">djbc.kite_pbb</field>
+		<field name="arch" type="xml">
+			<tree create="0" edit="0">
+				<field name="jenis_dok"/>
+				<field name="no_penerimaan"/>
+				<field name="tgl_penerimaan"/>
+				<field name="kode_barang"/>
+				<field name="nama_barang"/>
+				<field name="jumlah"/>
+				<field name="satuan"/>
+				<field name="gudang"/>
+				<field name="nilai"/>
+				<field name="negara_asal"/>
+				<field name="penerima_subkon"/>
+				<field name="djbc"/>
+				
+			</tree>
+		</field>
+	</record> 
+
+
+
+	<record id="kite_pbb_form" model="ir.ui.view">
+		<field name="name">Pemasukan Bahan Baku Form</field>
+		<field name="model">djbc.kite_pbb</field>
+		<field name="arch" type="xml">
+			<form create="0" edit="0">
+				<group>
+					<group>
+						<field name="jenis_dok"/>
+					<field name="no_penerimaan"/>
+					<field name="tgl_penerimaan"/>
+						
+					</group>
+					<group>
+						<field name="kode_barang"/>
+						<field name="nama_barang"/>
+						<field name="jumlah"/>
+						<field name="satuan"/>
+						<field name="gudang"/>
+						<field name="nilai"/>
+						<field name="negara_asal"/>
+						<field name="penerima_subkon"/>
+						<field name="djbc"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+
+	<record id="kite_pbb_action" model="ir.actions.act_window">
+		<field name="name">Pemasukan Bahan Baku</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">djbc.kite_pbb</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+
+</odoo>
