@@ -16,7 +16,7 @@ class DJBCKitePemws(models.Model):
     # jumlah = fields.Float(string='Jumlah')
     satuan = fields.Char(string='Satuan')
     jumlah_disubkon = fields.Char(string='Jumlah Disubkon')
-    jumlah_digunakan = fields.Char(string='Jumlah Digunakan')
+#     jumlah_digunakan = fields.Char(string='Jumlah Digunakan')
     penerima_subkon = fields.Char(string='Penerima Subkon')
     # djbc = fields.Char(string='DJBC')
 
@@ -52,8 +52,8 @@ BEGIN
 	delete from djbc_kite_pemws;
 	
 	for rec in csr loop
-		insert into djbc_kite_pemws (nomor_pengeluaran, tanggal_pengeluaran, kode_barang,nama_barang, satuan, jumlah_digunakan, jumlah_disubkon, penerima_subkon) 
-			values (rec.nomor_pengeluaran, rec.tanggal_pengeluaran,rec.kode_barang, rec.nama_barang, rec.satuan, rec.jumlah_digunakan, rec.jumlah_disubkon, rec.penerima_subkon) ;
+		insert into djbc_kite_pemws (nomor_pengeluaran, tanggal_pengeluaran, kode_barang,nama_barang, satuan, jumlah_disubkon, penerima_subkon) 
+			values (rec.nomor_pengeluaran, rec.tanggal_pengeluaran,rec.kode_barang, rec.nama_barang, rec.satuan, rec.jumlah_disubkon, rec.penerima_subkon) ;
 	end loop;
 		
 END;
