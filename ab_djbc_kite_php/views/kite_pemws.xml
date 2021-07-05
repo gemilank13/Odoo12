@@ -12,7 +12,7 @@
 				<!-- <field name="jumlah"/> -->
 				<field name="satuan"/>
 				<!-- <field name="gudang"/> -->
-				<field name="jumlah_digunakan"/>
+<!-- 				<field name="jumlah_digunakan"/> -->
 				<field name="jumlah_disubkon"/>
 				<field name="penerima_subkon"/>
 				<!-- <field name="djbc"/> -->
@@ -40,7 +40,7 @@
 						<!-- <field name="jumlah"/> -->
 						<field name="satuan"/>
 						<!-- <field name="gudang"/> -->
-						<field name="jumlah_digunakan"/>
+<!-- 						<field name="jumlah_digunakan"/> -->
 						<field name="jumlah_disubkon"/>
 						<field name="penerima_subkon"/>
 						<!-- <field name="djbc"/> -->
