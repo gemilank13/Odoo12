@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+       id="kite_mbb_xlsx"
+       model="djbc.kite_mbb"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_djbc_kite_xls.kite_mbb_xlsx"
+       file="DJBC Laporan Mutasi Bahan Baku"
+    />
+
+    <report
+       id="kite_mhp_xlsx"
+       model="djbc.kite_mhp"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_djbc_kite_xls.kite_mhp_xlsx"
+       file="DJBC Laporan Mutasi Hasil Produksi"
+    />
+
+    <report
+       id="kite_pbb_xlsx"
+       model="djbc.kite_pbb"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_djbc_kite_xls.kite_pbb_xlsx"
+       file="DJBC Laporan Pemasukan Bahan Baku"
+    />
+
+    <report
+       id="kite_pembb_xlsx"
+       model="djbc.kite_pembb"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_djbc_kite_xls.kite_pembb_xlsx"
+       file="DJBC Laporan Pemakaian Bahan Baku"
+    />
+
+    <report
+       id="kite_pemws_xlsx"
+       model="djbc.kite_pemws"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_djbc_kite_xls.kite_pemws_xlsx"
+       file="DJBC Laporan Pemakaian WS"
+    />
+
+    <report
+       id="kite_penghp_xlsx"
+       model="djbc.kite_penghp"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_djbc_kite_xls.kite_penghp_xlsx"
+       file="DJBC Laporan Pengeluaran Hasil Produksi"
+    />
+
+    <report
+       id="kite_php_xlsx"
+       model="djbc.kite_php"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_djbc_kite_xls.kite_php_xlsx"
+       file="DJBC Laporan Pemasukan Hasil Produksi"
+    />
+
+    <report
+       id="kite_pw_xlsx"
+       model="djbc.kite_pw"
+       string="Print Xslx"
+       report_type="xlsx"
+       name="ab_djbc_kite_xls.kite_pw_xlsx"
+       file="DJBC Laporan Penyelesaian Waste"
+    />
+</odoo>

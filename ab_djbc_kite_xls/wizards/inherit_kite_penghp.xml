@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record model="ir.ui.view" id="inherit_kite_penghp">
+		<field name="name">kite_penghp.inherit</field>
+		<field name="model">djbc.kite.penghp.wizard</field>
+		<field name="inherit_id" ref="ab_djbc_kite_php.kite_penghp_wizard_form"/>
+		<field name="arch" type="xml">
+			<!-- gunakan tag xpath untuk mengacu pada suatu elemen -->
+			<xpath expr="//button[@name='generate_laporan']" position="after">
+				<button name="generate_laporan_xls" type="object" class="oe_highlight" string="Pint Xlsx"/>
+			</xpath>
+
+		</field>
+	</record>
+</odoo>
