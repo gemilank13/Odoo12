@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="inherit_invoice">
+			<field name="name">inherit.invoice</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form"/>
+			<field name="arch" type="xml">
+				
+				<field name="payment_term_id" position="after">
+					<field name="unit_kerja"/>
+				</field>
+
+			</field>
+		</record>
+	</data>
+</odoo>
