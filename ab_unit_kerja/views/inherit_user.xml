@@ -8,7 +8,7 @@
 			<field name="inherit_id" ref="base.view_users_form"/>
 			<field name="arch" type="xml">
 				
-				<field name="login" position="after">
+				<field name="sel_groups_19_23" position="before">
 					<field name="unit_kerja"/>
 				</field>
 
