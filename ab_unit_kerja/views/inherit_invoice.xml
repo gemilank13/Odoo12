@@ -12,6 +12,8 @@
 					<field name="unit_kerja"/>
 					<field name="ab_date"/>
 					<field name="ab_keterangan"/>
+				</field>
+				<field name="currency_id" position="after">
 					<field name="export_of"/>
 				</field>
 
