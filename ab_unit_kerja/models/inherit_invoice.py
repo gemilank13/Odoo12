@@ -6,6 +6,7 @@ class InheritInvoice(models.Model):
     unit_kerja = fields.Selection([ ('BOB', 'BOB'),('ACW', 'ACW'), ('SOR', 'SOR'), ('CIG', 'CIG')],string= 'Unit Kerja')
     ab_date= fields.Date(string="Date of Exportation/Production")
     ab_keterangan= fields.Char(string="Keterangan")
+    export_of= fields.Char(string="Export of")
 
     @api.model
     def default_get(self, fields):
