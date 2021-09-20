@@ -12,6 +12,7 @@
 					<field name="unit_kerja"/>
 					<field name="ab_date"/>
 					<field name="ab_keterangan"/>
+					<field name="export_of"/>
 				</field>
 
 			</field>
