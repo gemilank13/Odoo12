@@ -10,7 +10,7 @@
     'author': 'Geger - EDI Indonesia',
     'license': 'AGPL-3',
     'depends': [
-        'base','product','account','purchase'
+        'base','product','account','purchase','mrp'
     ],
     'data': [
         'views/inherit_user.xml',
@@ -18,6 +18,7 @@
         'views/inherit_vendor_bill.xml',
         'views/inherit_invoice.xml',
         'views/inherit_journal.xml',
+        'views/inherit_mrp.xml',
 
     ],
     'installable': True,
