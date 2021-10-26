@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="inherit_stock_move">
+			<field name="name">inherit.stock_move</field>
+			<field name="model">stock.move</field>
+			<field name="inherit_id" ref="stock.view_move_form"/>
+			<field name="arch" type="xml">
+				
+				<field name="location_dest_id" position="after">
+					<field name="buyer"/>
+					<field name="style"/>
+					<field name="no_po"/>
+				</field>
+
+			</field>
+		</record>
+	</data>
+</odoo>
