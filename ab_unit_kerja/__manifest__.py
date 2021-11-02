@@ -15,7 +15,7 @@
     'data': [
         'views/inherit_user.xml',
         'views/inherit_barang.xml',
-        'views/inherit_vendor_bill.xml',
+#         'views/inherit_vendor_bill.xml',
         'views/inherit_invoice.xml',
         'views/inherit_journal.xml',
         'views/inherit_journal_item.xml',
