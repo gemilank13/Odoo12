@@ -19,6 +19,7 @@
         'views/inherit_invoice.xml',
         'views/inherit_journal.xml',
         'views/inherit_journal_item.xml',
+        'views/inherit_invoice_line.xml',
 
     ],
     'installable': True,
