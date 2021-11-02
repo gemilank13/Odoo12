@@ -4,6 +4,6 @@
 from . import inherit_barang
 from . import inherit_user
 from . import inherit_invoice
-# from . import inherit_vendor_bill
+from . import inherit_vendor_bill
 from . import inherit_journal
 from . import inherit_journal_item
