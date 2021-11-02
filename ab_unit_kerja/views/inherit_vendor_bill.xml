@@ -11,6 +11,9 @@
 				<field name="vendor_bill_purchase_id" position="after">
 					<field name="unit_kerja"/>
 				</field>
+				<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='name']" position="after">
+				    <field name="unit_kerja"/>
+				</xpath>
 
 			</field>
 		</record>
