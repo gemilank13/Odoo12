@@ -10,7 +10,7 @@ class BalanceSheetXlsx(models.AbstractModel):
 
     def generate_xlsx_report(self, workbook, data, lines):
 
-        
+
         if data['form']['is_manual_rate']:
             this_rate=data['form']['rate']
         else:
@@ -20,12 +20,12 @@ class BalanceSheetXlsx(models.AbstractModel):
             ('name','<',data['form']['currency_date'])],limit=1).rate
             rate_idr=self.env['res.currency.rate'].search([('currency_id', '=', id_idr.id),
             ('name','<',data['form']['currency_date'])],limit=1).rate
-            
+
             this_rate=rate_idr*rate_foreign
 
         # _logger.info("------>" + str(this_rate))
         sheet2 = workbook.add_worksheet('Profit and Loss')
-        
+
         sheet2.set_column(0,0,10)
         sheet2.set_column(1,1,40)
         sheet2.set_column(2,2,15)
@@ -35,7 +35,7 @@ class BalanceSheetXlsx(models.AbstractModel):
         format0.set_font_size(10)
         format0.set_bold()
 
-        
+
         format1 = workbook.add_format()
         format1.set_font_size(10)
         format1.set_bold()
@@ -443,7 +443,7 @@ class BalanceSheetXlsx(models.AbstractModel):
                     sheet2.write(i, 3, (obj2.prev_period), money)
                     tot_cur_ebitda = tot_cur_ebitda + (obj2.cur_period)
                     tot_prev_ebitda = tot_prev_ebitda + (obj2.prev_period)
-                    
+
 
         i = i + 1
         sheet2.write(i, 0, "410999", format0)
@@ -656,7 +656,7 @@ class BalanceSheetXlsx(models.AbstractModel):
                     tot_cur_ebitda = tot_cur_ebitda + (obj2.cur_period)
                     tot_prev_ebitda = tot_prev_ebitda + (obj2.prev_period)
 
-        
+
         i = i + 1
         sheet2.write(i, 0, "470099", format0)
         sheet2.write(i, 1, "Licensing", format0)
@@ -1197,7 +1197,7 @@ class BalanceSheetXlsx(models.AbstractModel):
         sheet2.write(i, 2, tot_cur_netin * -1, money)
         sheet2.write(i, 3, tot_prev_netin * -1, money)
 
-                
+
         # i = i + 2
         # sheet2.write(i, 0, "Cost of Production", format0)
 
@@ -1644,7 +1644,7 @@ class BalanceSheetXlsx(models.AbstractModel):
         #     # sheet2.write(i, 4, obj.currency, format2)
         #     # sheet2.write(i, 5, obj.ori_cur_period, money)
         #     # sheet2.write(i, 6, obj.ori_prev_period, money)
-            
+
 
         # i = i + 2
         # sheet2.write(i, 0, 'EAT', format0)
@@ -1729,11 +1729,11 @@ class BalanceSheetXlsx(models.AbstractModel):
         # sheet.set_column(4, 4, 15)
         # sheet.set_column(5, 5, 15)
 
-        
+
 
         sheet.write(0, 0, 'PT. PENYELESAIAN MASALAH PROPERTY', format1)
         sheet.write(1, 0, 'STATEMENT OF FINANCIAL POSITION', format1)
-        sheet.write(2, 0, type_laporan + ' - ' + unit_kerja, format0)
+        sheet.write(2, 0, type_laporan , format0)
         sheet.write(3, 0, 'Current Period : ' + d_start+'-'+m_start+'-'+y_start + ' s.d. ' + d_end+'-'+m_end+'-'+y_end, format0)
         sheet.write(4, 0, 'Year to Date: ' + d_start2+'-'+m_start2+'-'+y_start2 + ' s.d. ' + d_end2+'-'+m_end2+'-'+y_end2, format0)
 
@@ -2098,7 +2098,7 @@ class BalanceSheetXlsx(models.AbstractModel):
                     sheet.write(i, 3, (obj2.prev_period), money)
                     tot_cur_ppq = tot_cur_ppq + (obj2.cur_period)
                     tot_prev_ppq = tot_cur_ppq + (obj2.prev_period)
-                
+
 
 
         i = i + 1
@@ -2320,7 +2320,7 @@ class BalanceSheetXlsx(models.AbstractModel):
                     sheet.write(i, 3, (obj2.prev_period), money)
                     tot_non_cur_period = tot_non_cur_period + (obj2.cur_period)
                     tot_non_prev_period = tot_non_prev_period + (obj2.prev_period)
-                    
+
 
 
         i=i+2
@@ -2336,7 +2336,7 @@ class BalanceSheetXlsx(models.AbstractModel):
         sheet.write(i, 3, (tot_prev_period + tot_non_prev_period + tot_prev_ppq + tot_prev_fin), money)
 
 
-       
+
 
 
         i = i + 3
@@ -2371,7 +2371,7 @@ class BalanceSheetXlsx(models.AbstractModel):
                     sheet.write(i, 3, (obj2.prev_period), money)
                     tot_cur_period_hutang = tot_cur_period_hutang + (obj2.cur_period)
                     tot_prev_period_hutang = tot_prev_period_hutang + (obj2.prev_period)
-                    
+
 
         i = i + 1
         sheet.write(i, 0, "221099", format0)
@@ -2650,7 +2650,7 @@ class BalanceSheetXlsx(models.AbstractModel):
                     sheet.write(i, 3, (obj2.prev_period), money)
                     tot_cur_eq = tot_cur_eq + (obj2.cur_period)
                     tot_prev_eq = tot_prev_eq + (obj2.prev_period)
-                    
+
 
         i = i + 1
         sheet.write(i, 0, "280999", format0)
@@ -2710,21 +2710,21 @@ class BalanceSheetXlsx(models.AbstractModel):
                     sheet.write(i, 3, (obj2.prev_period), money)
                     tot_cur_eq = tot_cur_eq + (obj2.cur_period)
                     tot_prev_eq = tot_prev_eq + (obj2.prev_period)
-                
-        
-        
+
+
+
         # i = i + 2
         # sheet.write(i, 0, 'Total Current Liabilities', format0)
-        # # sheet.write(i, 1, obj.name, format2) 
+        # # sheet.write(i, 1, obj.name, format2)
         # sheet.write(i, 2, tot_cur_period_hutang * -1, money)
         # sheet.write(i, 3, tot_prev_period_hutang * -1, money)
 
         # i = i + 2
         # sheet.write(i, 0, 'Total Non-Current Liabilities', format0)
-        # # sheet.write(i, 1, obj.name, format2) 
+        # # sheet.write(i, 1, obj.name, format2)
         # sheet.write(i, 2, (tot_non_cur_period_hutang * -1), money)
         # sheet.write(i, 3, (tot_non_prev_period_hutang * -1), money)
-        
+
         # i = i + 2
         # sheet.write(i, 0, 'Total Equity', format0)
         # # sheet.write(i, 1, obj.name, format2)
@@ -2741,4 +2741,3 @@ class BalanceSheetXlsx(models.AbstractModel):
         # sheet.write(i, 3, (tot_non_prev_period_hutang+tot_prev_period_hutang+tot_prev_period_modal-e_a_t2) * -1, money)
 
 
- 
